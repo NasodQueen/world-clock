@@ -40,6 +40,9 @@ function updateTime() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   //Format the city name from the target value
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
@@ -51,7 +54,8 @@ function updateCity(event) {
     <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
     </div>
     <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}</div>
-        </div>`;
+        </div>
+        <a href="index.html" class="home">Back to home</a>`;
 }
 
 updateTime();
