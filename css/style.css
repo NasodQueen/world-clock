@@ -58,6 +58,8 @@ select {
 }
 
 footer {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   color: rgba(0, 0, 0, 0.5);
