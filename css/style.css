@@ -1,3 +1,7 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
 html {
   height: 100%;
   overflow: hidden;
@@ -9,31 +13,17 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background: radial-gradient(
-      ellipse at top left,
-      rgb(51, 71, 93) 25%,
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse at bottom left,
-      rgb(41, 37, 71) 25%,
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse at top right,
-      rgb(135, 174, 178) 25%,
-      transparent 100%
-    ),
-    radial-gradient(
-      ellipse at bottom right,
-      rgb(126, 111, 125) 25%,
-      transparent 100%
-    );
+  background: radial-gradient(ellipse at top left, #94f0dd 15%, transparent 60%),
+    radial-gradient(ellipse at bottom left, #98d7f4 15%, transparent 60%),
+    radial-gradient(ellipse at top right, #feedbe 25%, transparent 60%),
+    radial-gradient(ellipse at bottom right, #fcb0c4 100%, transparent 75%);
 }
 
 h1 {
   text-align: center;
-  font-size: 36px;
+  font-size: 42px;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -46,16 +36,21 @@ select {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
+  border-color: rgba(255, 255, 255, 0.3);
   font-size: 18px;
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .container {
   max-width: 600px;
   margin: 60px auto;
-  padding: 60px;
-  background-color: white;
-  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.15);
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: 10px;
 }
 
 .city {
@@ -75,9 +70,10 @@ select {
 }
 
 .time {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 900;
   font-family: "PT Mono", monospace;
+  margin-top: 10px;
 }
 
 .time small {
@@ -87,10 +83,17 @@ select {
   font-family: "PT Mono", monospace;
 }
 
+.timezone {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
 footer {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  font-family: "PT Mono", monospace;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
 }

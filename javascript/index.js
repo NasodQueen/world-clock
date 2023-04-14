@@ -5,12 +5,15 @@ function updateTime() {
   if (losAngelesElement) {
     let losAngelesDateElement = losAngelesElement.querySelector(".date");
     let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+    let losAngelesTimeZoneElement =
+      losAngelesElement.querySelector(".timezone");
     let losAngelesTime = moment().tz("America/Los_Angeles");
     losAngelesDateElement.innerHTML =
       losAngelesTime.format("dddd, MMMM Do YYYY");
     losAngelesTimeElement.innerHTML = losAngelesTime.format(
       "hh:mm:ss [<small>]A[</small>]" //use [] to exclude <small></small> from date format
     );
+    losAngelesTimeZoneElement.innerHTML = losAngelesTime.format("z / Z [GMT]");
   }
 
   //Sydney
@@ -18,23 +21,27 @@ function updateTime() {
   if (sydneyElement) {
     let sydneyDateElement = sydneyElement.querySelector(".date");
     let sydneyTimeElement = sydneyElement.querySelector(".time");
+    let sydneyTimeZoneElement = sydneyElement.querySelector(".timezone");
     let sydneyTime = moment().tz("Australia/Sydney");
     sydneyDateElement.innerHTML = sydneyTime.format("dddd, MMMM Do YYYY");
     sydneyTimeElement.innerHTML = sydneyTime.format(
       "hh:mm:ss [<small>]A[</small>]" //use [] to exclude <small></small> from date format
     );
+    sydneyTimeZoneElement.innerHTML = sydneyTime.format("z / Z [GMT]");
   }
 
-  //Zürich
-  let zurichElement = document.querySelector("#zurich");
-  if (zurichElement) {
-    let zurichDateElement = zurichElement.querySelector(".date");
-    let zurichTimeElement = zurichElement.querySelector(".time");
-    let zurichTime = moment().tz("Europe/Zurich");
-    zurichDateElement.innerHTML = zurichTime.format("dddd, MMMM Do YYYY");
-    zurichTimeElement.innerHTML = zurichTime.format(
+  //Bern
+  let bernElement = document.querySelector("#bern");
+  if (bernElement) {
+    let bernDateElement = bernElement.querySelector(".date");
+    let bernTimeElement = bernElement.querySelector(".time");
+    let bernTimeZoneElement = bernElement.querySelector(".timezone");
+    let bernTime = moment().tz("Europe/Zurich");
+    bernDateElement.innerHTML = bernTime.format("dddd, MMMM Do YYYY");
+    bernTimeElement.innerHTML = bernTime.format(
       "hh:mm:ss [<small>]A[</small>]" //use [] to exclude <small></small> from date format
     );
+    bernTimeZoneElement.innerHTML = bernTime.format("z / Z [GMT]");
   }
 }
 
@@ -43,7 +50,7 @@ function updateCity(event) {
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
   }
-  //Format the city name from the target value
+  //Format the city name from the target value, remove underscore, split at slash
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
