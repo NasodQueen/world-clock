@@ -59,6 +59,7 @@ function updateCity(event) {
     <div>
     <h2>${cityName}</h2>
     <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+    <div class="timezone">${cityTime.format("z / Z [GMT]")}</div>
     </div>
     <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}</div>
         </div>
