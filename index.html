@@ -10,57 +10,65 @@
     <title>World Clock</title>
   </head>
   <body>
-    <div class="container">
-      <h1>World Clock</h1>
-      <select name="city-select" id="city-select">
-        <option value="">Select a city...</option>
-        <option value="current">My current location</option>
-        <option value="America/Anchorage">Anchorage 🇺🇸</option>
-        <option value="Pacific/Auckland">Auckland 🇳🇿</option>
-        <option value="Europe/Berlin">Berlin 🇩🇪</option>
-        <option value="Australia/Brisbane">Brisbane 🇦🇺</option>
-        <option value="Africa/Cairo">Cairo 🇪🇬</option>
-        <option value="Pacific/Honolulu">Honolulu 🇺🇸</option>
-        <option value="Asia/Jakarta">Jakarta 🇮🇩</option>
-        <option value="Asia/Kabul">Kabul 🇦🇫</option>
-        <option value="Asia/Kathmandu">Kathmandu 🇳🇵</option>
-        <option value="Asia/Kolkata">Kolkata 🇮🇳</option>
-        <option value="Africa/Lagos">Lagos 🇳🇬</option>
-        <option value="Europe/London">London 🇬🇧</option>
-        <option value="America/Mexico_City">Mexico City 🇲🇽</option>
-        <option value="Europe/Moscow">Moscow 🇷🇺</option>
-        <option value="America/New_York">New York 🇺🇸</option>
-        <option value="America/Phoenix">Phoenix 🇺🇸</option>
-        <option value="America/Sao_Paulo">São Paulo 🇧🇷</option>
-        <option value="Asia/Shanghai">Shanghai 🇨🇳</option>
-        <option value="Asia/Tehran">Tehran 🇮🇷</option>
-        <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
-        <option value="Europe/Zurich">Zürich 🇨🇭</option>
-      </select>
-      <div id="cities">
-        <div class="city" id="los-angeles">
-          <div>
-            <h2>Los Angeles</h2>
-            <div class="date">...</div>
-            <div class="timezone">...</div>
-          </div>
-          <div class="time">...</div>
+    <div class="outer-container">
+      <div class="container">
+        <div class="theme-switch">
+          <label class="switch">
+            <input type="checkbox" id="toggle" />
+            <span class="slider round"></span>
+          </label>
         </div>
-        <div class="city" id="sydney">
-          <div>
-            <h2>Sydney</h2>
-            <div class="date">...</div>
-            <div class="timezone">...</div>
+        <h1>World Clock</h1>
+        <select name="city-select" id="city-select">
+          <option value="">Select a city...</option>
+          <option value="current">My current location</option>
+          <option value="America/Anchorage">Anchorage 🇺🇸</option>
+          <option value="Pacific/Auckland">Auckland 🇳🇿</option>
+          <option value="Europe/Berlin">Berlin 🇩🇪</option>
+          <option value="Australia/Brisbane">Brisbane 🇦🇺</option>
+          <option value="Africa/Cairo">Cairo 🇪🇬</option>
+          <option value="Pacific/Honolulu">Honolulu 🇺🇸</option>
+          <option value="Asia/Jakarta">Jakarta 🇮🇩</option>
+          <option value="Asia/Kabul">Kabul 🇦🇫</option>
+          <option value="Asia/Kathmandu">Kathmandu 🇳🇵</option>
+          <option value="Asia/Kolkata">Kolkata 🇮🇳</option>
+          <option value="Africa/Lagos">Lagos 🇳🇬</option>
+          <option value="Europe/London">London 🇬🇧</option>
+          <option value="America/Mexico_City">Mexico City 🇲🇽</option>
+          <option value="Europe/Moscow">Moscow 🇷🇺</option>
+          <option value="America/New_York">New York 🇺🇸</option>
+          <option value="America/Phoenix">Phoenix 🇺🇸</option>
+          <option value="America/Sao_Paulo">São Paulo 🇧🇷</option>
+          <option value="Asia/Shanghai">Shanghai 🇨🇳</option>
+          <option value="Asia/Tehran">Tehran 🇮🇷</option>
+          <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+          <option value="Europe/Zurich">Zürich 🇨🇭</option>
+        </select>
+        <div id="cities">
+          <div class="city" id="los-angeles">
+            <div>
+              <h2>Los Angeles</h2>
+              <div class="date">...</div>
+              <div class="timezone">...</div>
+            </div>
+            <div class="time">...</div>
           </div>
-          <div class="time">...</div>
-        </div>
-        <div class="city" id="bern">
-          <div>
-            <h2>Bern</h2>
-            <div class="date">...</div>
-            <div class="timezone">...</div>
+          <div class="city" id="sydney">
+            <div>
+              <h2>Sydney</h2>
+              <div class="date">...</div>
+              <div class="timezone">...</div>
+            </div>
+            <div class="time">...</div>
           </div>
-          <div class="time">...</div>
+          <div class="city" id="bern">
+            <div>
+              <h2>Bern</h2>
+              <div class="date">...</div>
+              <div class="timezone">...</div>
+            </div>
+            <div class="time">...</div>
+          </div>
         </div>
       </div>
     </div>
@@ -69,6 +77,14 @@
       <a href="https://github.com/NasodQueen/world-clock" target="_blank"
         >open-sourced on GitHub</a
       >.
+      <div>
+        What I listened to while coding:
+        <a
+          href="https://www.youtube.com/playlist?list=PLbAFXJC0J5GYVLLnjullmZ2NuG6ay-SXw"
+          target="_blank"
+          >K/DA</a
+        >
+      </div>
     </footer>
     <script src="javascript/index.js"></script>
   </body>

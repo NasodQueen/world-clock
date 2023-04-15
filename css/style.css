@@ -21,11 +21,24 @@ body {
   color: rgba(41, 37, 70, 1);
 }
 
+.dark body {
+  background: radial-gradient(ellipse at top left, #0e323a 15%, transparent 60%),
+    radial-gradient(ellipse at bottom left, #1f2a3f 15%, transparent 60%),
+    radial-gradient(ellipse at top right, #333026 25%, transparent 60%),
+    radial-gradient(ellipse at bottom right, #301a3d 100%, transparent 75%);
+  color: #cacaca;
+}
+
 h1 {
   text-align: center;
   font-size: 42px;
   margin-bottom: 40px;
   text-shadow: 1px 1px 0 rgba(41, 37, 70, 0.3);
+}
+
+.dark h1 {
+  color: #f8f7f7;
+  text-shadow: 0 0 10px #9ecaed;
 }
 
 h2 {
@@ -44,15 +57,47 @@ select {
   color: rgba(41, 37, 70, 0.6);
 }
 
+.dark select {
+  color: rgba(41, 37, 70, 1);
+}
+
+.outer-container {
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 3px;
+  max-width: 610px;
+  height: 643px;
+  z-index: 0;
+  border-radius: 12px;
+}
+.dark .outer-container {
+  /* background-image: linear-gradient(to right, #0edcf4, #954cf8); */
+  /* box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.25); */
+  background: radial-gradient(ellipse at top left, #94f0dd 15%, transparent 60%),
+    radial-gradient(ellipse at bottom left, #98d7f4 15%, transparent 60%),
+    radial-gradient(ellipse at top right, #feedbe 25%, transparent 60%),
+    radial-gradient(ellipse at bottom right, #fcb0c4 100%, transparent 75%);
+  box-shadow: 0 0 10px #9ecaed;
+}
+
 .container {
-  max-width: 600px;
-  margin: 60px auto;
+  margin: 0 auto;
   padding: 20px 40px;
+  max-width: 600px;
+  height: 600px;
   background-color: rgba(255, 255, 255, 0.25);
   box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.07);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: 10px;
+  z-index: 1;
+}
+
+.dark .container {
+  background: radial-gradient(ellipse at top left, #0e323a 15%, transparent 60%),
+    radial-gradient(ellipse at bottom left, #1f2a3f 15%, transparent 60%),
+    radial-gradient(ellipse at top right, #333026 25%, transparent 60%),
+    radial-gradient(ellipse at bottom right, #301a3d 100%, transparent 75%);
 }
 
 .city {
@@ -61,6 +106,10 @@ select {
   margin: 20px 0;
   padding: 20px;
   border-bottom: 1px dashed rgba(41, 37, 70, 0.15);
+}
+
+.dark .city {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.7);
 }
 
 .city:last-child {
@@ -94,13 +143,64 @@ a {
   color: rgba(41, 37, 70, 1);
 }
 
+.dark a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 footer {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 40px;
   text-align: center;
   color: rgba(41, 37, 70, 0.5);
   background: rgba(255, 255, 255, 0.1);
   padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+}
+
+.dark footer {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.4s;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }

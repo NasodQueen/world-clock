@@ -71,3 +71,21 @@ setInterval(updateTime, 1000);
 
 let citySelectElement = document.querySelector("#city-select");
 citySelectElement.addEventListener("change", updateCity);
+
+// Light/Dark toggle
+var toggleSwitch = document.querySelector("#toggle");
+var html = document.querySelector("html");
+var h1 = document.querySelector("h1");
+var outerContainer = document.querySelector(".outer-container");
+
+toggleSwitch.addEventListener("change", function () {
+  if (this.checked) {
+    html.classList.add("dark");
+    h1.classList.add("dark");
+    outerContainer.classList.add("dark");
+  } else {
+    html.classList.remove("dark");
+    h1.classList.remove("dark");
+    outerContainer.classList.remove("dark");
+  }
+});
