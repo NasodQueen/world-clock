@@ -65,8 +65,8 @@ select {
   margin: 0 auto;
   margin-top: 60px;
   padding: 3px;
-  max-width: 610px;
-  height: 643px;
+  max-width: 650px;
+  max-height: 643px;
   z-index: 0;
   border-radius: 12px;
 }
@@ -84,7 +84,7 @@ select {
   margin: 0 auto;
   padding: 20px 40px;
   max-width: 600px;
-  height: 600px;
+  max-height: 600px;
   background-color: rgba(255, 255, 255, 0.25);
   box-shadow: 5px 5px 15px 3px rgba(0, 0, 0, 0.07);
   border-radius: 10px;

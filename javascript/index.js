@@ -1,3 +1,21 @@
+// Light/Dark toggle
+var toggleSwitch = document.querySelector("#toggle");
+var html = document.querySelector("html");
+var h1 = document.querySelector("h1");
+var outerContainer = document.querySelector(".outer-container");
+
+toggleSwitch.addEventListener("change", function () {
+  if (this.checked) {
+    html.classList.add("dark");
+    h1.classList.add("dark");
+    outerContainer.classList.add("dark");
+  } else {
+    html.classList.remove("dark");
+    h1.classList.remove("dark");
+    outerContainer.classList.remove("dark");
+  }
+});
+
 function updateTime() {
   //Los Angeles
   let losAngelesElement = document.querySelector("#los-angeles");
@@ -63,29 +81,24 @@ function updateCity(event) {
     </div>
     <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}</div>
         </div>
-        <a href="" class="home">Back</a>`;
+        <a href="" class="home">Reset</a>`;
+}
+
+function updateSelectedCityTime() {
+  let selectedCityElement = document.querySelector("#cities .city");
+  if (selectedCityElement) {
+    let selectedCityTimeElement = selectedCityElement.querySelector(".time");
+    let selectedCityTimeZone = document.querySelector("#city-select").value;
+    let selectedCityTime = moment().tz(selectedCityTimeZone);
+    selectedCityTimeElement.innerHTML = selectedCityTime.format(
+      "hh:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 updateTime();
 setInterval(updateTime, 1000);
+setInterval(updateSelectedCityTime, 1000);
 
 let citySelectElement = document.querySelector("#city-select");
 citySelectElement.addEventListener("change", updateCity);
-
-// Light/Dark toggle
-var toggleSwitch = document.querySelector("#toggle");
-var html = document.querySelector("html");
-var h1 = document.querySelector("h1");
-var outerContainer = document.querySelector(".outer-container");
-
-toggleSwitch.addEventListener("change", function () {
-  if (this.checked) {
-    html.classList.add("dark");
-    h1.classList.add("dark");
-    outerContainer.classList.add("dark");
-  } else {
-    html.classList.remove("dark");
-    h1.classList.remove("dark");
-    outerContainer.classList.remove("dark");
-  }
-});
